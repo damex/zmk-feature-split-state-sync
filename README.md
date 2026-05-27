@@ -40,5 +40,16 @@ routes across the split.
 - Reconnect = input silence > 10 s. A peer that idles longer than that and
   then sends a single packet looks identical to a cold-boot. Fine when the
   bindings are idempotent.
-- Single-peer central only — `source` is one fixed id.
+- Single-peer central only. `source` is one fixed id.
 - Bindings are compile-time.
+
+## License
+
+This module is MIT.
+
+Dependencies (each keeps its own license):
+
+| Dependency | License |
+|---|---|
+| ZMK | MIT |
+| Zephyr | Apache-2.0 |

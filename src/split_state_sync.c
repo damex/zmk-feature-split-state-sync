@@ -23,6 +23,9 @@ LOG_MODULE_REGISTER(split_state_sync, CONFIG_ZMK_SPLIT_STATE_SYNC_LOG_LEVEL);
 #define STATE_SYNC_NODE DT_DRV_INST(0)
 #define STATE_SYNC_SOURCE DT_INST_PROP(0, source)
 
+BUILD_ASSERT(DT_INST_PROP_LEN(0, bindings) > 0,
+             "zmk,split-state-sync needs at least one binding to push");
+
 static const struct zmk_behavior_binding state_sync_bindings[] = {
     LISTIFY(DT_INST_PROP_LEN(0, bindings), ZMK_KEYMAP_EXTRACT_BINDING, (, ), STATE_SYNC_NODE)};
 

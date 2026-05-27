@@ -1,0 +1,9 @@
+# Copyright 2026 Roman Kuzmitskii (@damex)
+# SPDX-License-Identifier: MIT
+
+name: zmk-feature-split-state-sync
+build:
+  cmake: .
+  kconfig: Kconfig
+  settings:
+    dts_root: .

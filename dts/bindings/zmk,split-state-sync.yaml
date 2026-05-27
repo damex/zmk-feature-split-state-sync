@@ -1,0 +1,23 @@
+# Copyright 2026 Roman Kuzmitskii (@damex)
+# SPDX-License-Identifier: MIT
+
+description: |
+  Watches a peer's input stream and pushes `bindings` to it once per
+  reconnect, detected as the first input after a long silence. For transports
+  without a connect event (e.g. ESB).
+
+compatible: "zmk,split-state-sync"
+
+properties:
+  input:
+    type: phandle
+    required: true
+    description: "Peer input-split device to watch for activity."
+  source:
+    type: int
+    required: true
+    description: "Peer source id (0 for a single-peripheral central)."
+  bindings:
+    type: phandle-array
+    required: true
+    description: "Bindings invoked on the peer once per reconnect."

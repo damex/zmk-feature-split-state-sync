@@ -15,7 +15,6 @@ Add to your `config/west.yml`:
     - name: zmk-feature-split-state-sync
       remote: damex
       revision: v0.1.0
-      import: true
 ```
 
 Declare on the central side, point it at the peer's input-split device:

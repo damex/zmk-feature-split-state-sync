@@ -3,6 +3,14 @@
 
 if DT_HAS_ZMK_SPLIT_STATE_SYNC_ENABLED
 
+config ZMK_SPLIT_STATE_SYNC_RECONNECT_TIMEOUT_MS
+    int "Silence threshold (ms) treated as a peer (re)connect"
+    default 10000
+    help
+      First input from the peer after this much silence triggers a state push.
+      Raise if peers can legitimately idle longer than this without being a
+      cold-boot, lower for snappier (re)connect detection.
+
 module = ZMK_SPLIT_STATE_SYNC
 module-str = zmk_split_state_sync
 source "subsys/logging/Kconfig.template.log_config"

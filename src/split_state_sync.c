@@ -22,7 +22,6 @@ LOG_MODULE_REGISTER(split_state_sync, CONFIG_ZMK_SPLIT_STATE_SYNC_LOG_LEVEL);
 
 #define STATE_SYNC_NODE DT_DRV_INST(0)
 #define STATE_SYNC_SOURCE DT_INST_PROP(0, source)
-#define STATE_SYNC_RECONNECT_MS 10000
 
 static const struct zmk_behavior_binding state_sync_bindings[] = {
     LISTIFY(DT_INST_PROP_LEN(0, bindings), ZMK_KEYMAP_EXTRACT_BINDING, (, ), STATE_SYNC_NODE)};
@@ -55,7 +54,7 @@ static void state_sync_input_cb(struct input_event *event, void *user_data) {
     ARG_UNUSED(event);
     ARG_UNUSED(user_data);
     const int64_t now = k_uptime_get();
-    if ((now - state_sync_last_activity_ms) >= STATE_SYNC_RECONNECT_MS) {
+    if ((now - state_sync_last_activity_ms) >= CONFIG_ZMK_SPLIT_STATE_SYNC_RECONNECT_TIMEOUT_MS) {
         state_sync_done = false;
     }
     if (!state_sync_done) {

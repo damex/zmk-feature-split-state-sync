@@ -1,0 +1,10 @@
+# Copyright 2026 Roman Kuzmitskii (@damex)
+# SPDX-License-Identifier: MIT
+
+if DT_HAS_ZMK_SPLIT_STATE_SYNC_ENABLED
+
+module = ZMK_SPLIT_STATE_SYNC
+module-str = zmk_split_state_sync
+source "subsys/logging/Kconfig.template.log_config"
+
+endif

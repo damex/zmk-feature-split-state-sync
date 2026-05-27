@@ -1,8 +1,8 @@
 # zmk-feature-split-state-sync
 
 Central-side ZMK feature. Watches a peer's input stream and pushes a list of
-bindings to it once per reconnect, detected as the first input after >10 s of
-silence. For transports without a connect event (ESB, custom radio).
+bindings to it on every (re)connect, detected as the first input after >10 s
+of silence. For transports without a connect event (ESB, custom radio).
 
 ## Use
 

@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: MIT
 
 /*
- * Watches a peer's input stream and pushes a list of bindings to it once per
- * reconnect, detected as the first input after a long silence. For transports
- * without a connect event (e.g. ESB).
+ * Watches a peer's input stream and pushes a list of bindings to it on every
+ * (re)connect, detected as the first input after a long silence. For
+ * transports without a connect event (e.g. ESB).
  */
 #define DT_DRV_COMPAT zmk_split_state_sync
 
